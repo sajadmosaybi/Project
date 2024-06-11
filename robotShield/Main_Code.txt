@@ -9,8 +9,8 @@
 8-Distance print on Serial terminal.
 */
 /*-------------------------------------Defines pins numbers-----------------------------------------------------------------*/
-const int SRF_Trigger_Pin = 8;
-const int SRF_Echo_Pin = 7;
+const int SRF_Trigger_Pin = 7;
+const int SRF_Echo_Pin = 8;
 const int Object_detection_led = 6;
 /*-------------------------------------Defines variables--------------------------------------------------------------------*/
 //long Response_Time;
@@ -87,9 +87,10 @@ float Distance_Calculate_Filter(char *Name_Filter, char *unit)
         Dis_Average= Dis + Dis_Average;
       if(timer==1000)
       { 
-        Serial.println(Dis_Average);
-        Serial.println(Filter_Cnt);
+        //Serial.println(Dis_Average);
+        //Serial.println(Filter_Cnt);
         Dis_Average=Dis_Average/Filter_Cnt;
+        Serial.print("Distance: ");
         Serial.println(Dis_Average);
         Filter_Cnt=0;
         timer=0;
@@ -112,9 +113,10 @@ float Distance_Calculate_Filter(char *Name_Filter, char *unit)
         Dis_Average= Dis + Dis_Average;
       if(timer==1000)
       { 
-        Serial.println(Dis_Average);
-        Serial.println(Filter_Cnt);
+        //Serial.println(Dis_Average);
+        //Serial.println(Filter_Cnt);
         Dis_Average=Dis_Average/Filter_Cnt;
+        Serial.print("Distance: ");
         Serial.println(Dis_Average);
         Filter_Cnt=0;
         timer=0;
